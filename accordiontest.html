@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- css links -->
+    <link rel="stylesheet" href="resources/css/bootstrap.min.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div id="accordion" class="accordion-container">
+        
+        <div>
+            <button class="btn accordion-title js-accordion-title">Accordion Title1</button>
+        </div>
+        <div class="accordion-content">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto eos eveniet excepturi
+                reprehenderit qui maiores accusantium facilis harum labore! Ducimus adipisci accusantium dolor quia
+                iure id, ullam suscipit vel esse?</p>
+            <div class="btn-wrapper d-flex my-4">
+                <button class="btn disabled btn-primary me-4">View</button>
+                <button class="btn disabled btn-success">Download</button>
+            </div>
+        </div>
+
+
+        <div>
+            <button class="btn accordion-title js-accordion-title">Accordion Title1</button>
+        </div>
+
+        <div class="accordion-content">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto eos eveniet excepturi
+                reprehenderit qui maiores accusantium facilis harum labore! Ducimus adipisci accusantium dolor quia
+                iure id, ullam suscipit vel esse?</p>
+            <div class="btn-wrapper d-flex my-4">
+                <button class="btn disabled btn-primary me-4">View</button>
+                <button class="btn disabled btn-success">Download</button>
+            </div>
+        </div>
+
+        <button class="btn accordion-title js-accordion-title">Accordion Title1</button>
+        <div class="accordion-content">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto eos eveniet excepturi
+                reprehenderit qui maiores accusantium facilis harum labore! Ducimus adipisci accusantium dolor quia
+                iure id, ullam suscipit vel esse?</p>
+            <div class="btn-wrapper d-flex my-4">
+                <button class="btn disabled btn-primary me-4">View</button>
+                <button class="btn disabled btn-success">Download</button>
+            </div>
+        </div>
+
+        <button class="btn accordion-title js-accordion-title">Accordion Title1</button>
+        <div class="accordion-content">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto eos eveniet excepturi
+                reprehenderit qui maiores accusantium facilis harum labore! Ducimus adipisci accusantium dolor quia
+                iure id, ullam suscipit vel esse?</p>
+            <div class="btn-wrapper d-flex my-4">
+                <button class="btn disabled btn-primary me-4">View</button>
+                <button class="btn disabled btn-success">Download</button>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+    <script src="resources/js/jquery-3.6.0.min.js"></script>
+    <script src="resources/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(function () {
+            $(".accordion-content").css("display", "none");
+            $(".js-accordion-title:first-of-type").addClass("open");
+            $(".js-accordion-title").click(function () {
+                $(".open").not(this).removeClass("open").next().slideUp(400);
+                $(this).toggleClass("open").next().slideToggle(400);
+            });
+        });
+    </script>
+</body>
+
+</html>

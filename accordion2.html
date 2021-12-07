@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- css links -->
+    <link rel="stylesheet" href="resources/css/bootstrap.min.css">
+
+    <style>
+        div.accordion-content {
+            padding: 0 18px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+            font-size: 15px;
+        }
+
+        .accordion-btn.active {
+            background: #d6d6d6;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <button class="accordion-btn btn">Pyhton product1</button>
+        <div class="accordion-content">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit quos
+            similique ut praesentium veritatis aliquam consequuntur? Fugiat quaerat
+            architecto
+            cupiditate tempora atque, pariatur, perferendis blanditiis sapiente corporis
+            odit
+            sint labore!
+            <div class="btn-wrapper d-flex my-4">
+                <button class="btn disabled btn-primary me-4">View</button>
+                <button class="btn disabled btn-success">Download</button>
+            </div>
+        </div>
+    </div>
+    <div>
+        <button class="accordion-btn btn">Pyhton product1</button>
+        <div class="accordion-content">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit quos
+            similique ut praesentium veritatis aliquam consequuntur? Fugiat quaerat
+            architecto
+            cupiditate tempora atque, pariatur, perferendis blanditiis sapiente corporis
+            odit
+            sint labore!
+            <div class="btn-wrapper d-flex my-4">
+                <button class="btn disabled btn-primary me-4">View</button>
+                <button class="btn disabled btn-success">Download</button>
+            </div>
+        </div>
+    </div>
+    <div>
+        <button class="accordion-btn btn">Pyhton product1</button>
+        <div class="accordion-content">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit quos
+            similique ut praesentium veritatis aliquam consequuntur? Fugiat quaerat
+            architecto
+            cupiditate tempora atque, pariatur, perferendis blanditiis sapiente corporis
+            odit
+            sint labore!
+            <div class="btn-wrapper d-flex my-4">
+                <button class="btn disabled btn-primary me-4">View</button>
+                <button class="btn disabled btn-success">Download</button>
+            </div>
+        </div>
+    </div>
+    <div>
+        <button class="accordion-btn btn">Pyhton product1</button>
+        <div class="accordion-content">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit quos
+            similique ut praesentium veritatis aliquam consequuntur? Fugiat quaerat
+            architecto
+            cupiditate tempora atque, pariatur, perferendis blanditiis sapiente corporis
+            odit
+            sint labore!
+            <div class="btn-wrapper d-flex my-4">
+                <button class="btn disabled btn-primary me-4">View</button>
+                <button class="btn disabled btn-success">Download</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <!-- <script src="resources/js/jquery-3.6.0.min.js"></script> -->
+    <script src="resources/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        //this is the accordion button
+        let accbtn = document.getElementsByClassName("accordion-btn");
+        let i;
+
+        for (i = 0; i < accbtn.length; i++) {
+            //when one of the buttons are clicked run this function
+            accbtn[i].onclick = function () {
+                //letiables
+                let panel = this.nextElementSibling;
+                let accContent = document.getElementsByClassName("accordion-content");
+                let courseAccordion = document.getElementsByClassName("accordion-btn");
+                let accActive = document.getElementsByClassName("accordion-btn active");
+
+                /*if pannel is already open - minimize*/
+                if (panel.style.maxHeight) {
+                    //minifies current pannel if already open
+                    panel.style.maxHeight = null;
+                    //removes the 'active' class as toggle didnt work on browsers minus chrome
+                    this.classList.remove("active");
+                } else { //pannel isnt open...
+                    //goes through the buttons and removes the 'active' css (+ and -)
+                    for (let ii = 0; ii < accActive.length; ii++) {
+                        accActive[ii].classList.remove("active");
+                    }
+                    //Goes through and removes 'activ' from the css, also minifies any 'panels' that might be open
+                    for (let iii = 0; iii < accContent.length; iii++) {
+                        this.classList.remove("active");
+                        accContent[iii].style.maxHeight = null;
+                    }
+                    //opens the specified pannel
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                    //adds the 'active' addition to the css.
+                    this.classList.add("active");
+                }
+            } //closing to the acc onclick function
+        } //closing to the for loop.
+    </script>
+</body>
+
+</html>
