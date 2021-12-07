@@ -208,7 +208,11 @@ p {
     font-weight: 400;
 
 }
-
+.python-files .accordion-file:last-of-type .accordion-btn, 
+.r-files .accordion-file:last-of-type .accordion-btn,
+.jupyter-files .accordion-file:last-of-type .accordion-btn{
+    border-bottom: 1px solid #dbdbdb;
+}
 .accordion-btn img {
     margin-right: 15px;
 }
